@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
+import { orderList } from "../../utils/Data";
 import OrderCard from "../order-cards/OrderCard";
 
 const settings = {
@@ -31,8 +32,9 @@ const OrderList = () => {
                 </div>
             </Slider>
 
-            <OrderCard/>
-            <OrderCard/>
+            {
+                orderList.map(item => <OrderCard item={item}/>)
+            }
         </div>
     )
 }

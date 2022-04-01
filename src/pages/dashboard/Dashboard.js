@@ -52,7 +52,7 @@ const Dashboard = () => {
             <h3 className="text-xl font-bold">Active Orders</h3>
             <div></div>
           </div>
-          <OrderList/>
+          {<OrderList/>}
         </div>
       </div>
       <Footer />

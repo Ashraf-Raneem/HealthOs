@@ -50,3 +50,47 @@ export const customerData = [
     name: "Dorothy Wright",
   },
 ];
+
+
+export const orderList = [
+  {
+    id: "281217",
+    timeStamp: "Today, 11:11 PM",
+    quantity: 1,
+    price: 4200,
+    orderStatus : "Pending",
+    customerStatus : "Paid",
+  },
+  {
+    id: "291221",
+    timeStamp: "Today, 11:11 PM",
+    quantity: 1,
+    price: 3242,
+    orderStatus : "Shipped",
+    customerStatus : "COD",
+  },
+  {
+    id: "211221",
+    timeStamp: "Today, 11:11 PM",
+    quantity: 2,
+    price: 1100,
+    orderStatus : "Accepted",
+    customerStatus : "Paid",
+  },
+  {
+    id: "221221",
+    timeStamp: "Today, 11:11 PM",
+    quantity: 2,
+    price: 1220,
+    orderStatus : "Pending",
+    customerStatus : "Paid",
+  },
+  {
+    id: "237821",
+    timeStamp: "Today, 11:11 PM",
+    quantity: 4,
+    price: 500,
+    orderStatus : "Accepted",
+    customerStatus : "COD",
+  }
+]
