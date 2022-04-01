@@ -4,6 +4,7 @@ import { RiWhatsappLine } from "react-icons/ri";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import DashboardBox from "../../components/dashboard-box/DashboardBox";
 import Footer from "../../components/footer/Footer";
+import OrderList from "../../components/order-list/OrderList";
 
 const Dashboard = () => {
   return (
@@ -45,6 +46,13 @@ const Dashboard = () => {
           <DashboardBox title="Total Sales" value="$2,918" />
           <DashboardBox title="Store Views" value="301" />
           <DashboardBox title="Product Views" value="19,121" />
+        </div>
+        <div className="my-2 p-6">
+          <div className="flex flex-row justify-between">
+            <h3 className="text-xl font-bold">Active Orders</h3>
+            <div></div>
+          </div>
+          <OrderList/>
         </div>
       </div>
       <Footer />
