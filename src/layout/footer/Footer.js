@@ -8,7 +8,7 @@ import { BsPerson } from "react-icons/bs";
 const Footer = () => {
   const [page, setPage] = useState("Home");
   return (
-    <div className="flex flex-row justify-evenly bg-white border-top border-secondary fixed bottom-0 left-0 right-0 p-3">
+    <div className="flex flex-row justify-evenly bg-white border-t-2 border-secondary fixed bottom-0 left-0 right-0 p-3">
       <div
         className="flex flex-col justify-center items-center text-gray-500 cursor-pointer"
         onClick={() => setPage("Home")}

@@ -3,7 +3,7 @@ import ReactSwitch from "react-switch";
 import { RiWhatsappLine } from "react-icons/ri";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import DashboardBox from "../../components/dashboard-box/DashboardBox";
-import Footer from "../../components/footer/Footer";
+import Footer from "../../layout/footer/Footer";
 import OrderList from "../../components/order-list/OrderList";
 
 const Dashboard = () => {
@@ -52,7 +52,7 @@ const Dashboard = () => {
             <h3 className="text-xl font-bold">Active Orders</h3>
             <div></div>
           </div>
-          {<OrderList/>}
+          {<OrderList />}
         </div>
       </div>
       <Footer />
