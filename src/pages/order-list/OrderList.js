@@ -1,10 +1,11 @@
 import React from "react";
 import { GoSettings } from "react-icons/go";
 import OrderList from "../../components/order-list/OrderList";
-
+import Head from "../../layout/head/Head";
 const OrderListPage = () => {
   return (
-    <div>
+    <React.Fragment>
+      <Head title="Orders"></Head>
       <div className="w-100 h-32 bg-primary">
         <div className="flex flex-row justify-between p-5">
           <div></div>
@@ -20,7 +21,7 @@ const OrderListPage = () => {
       <div className="px-5">
         <OrderList />
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

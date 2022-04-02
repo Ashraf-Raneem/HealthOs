@@ -3,11 +3,13 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import CustomerCard from "../../components/customer-cards/CustomerCard";
 import { customerData } from "../../utils/Data";
 import { useNavigate } from "react-router-dom";
+import Head from "../../layout/head/Head";
 
 const CustomerList = () => {
   const navigate = useNavigate();
   return (
-    <div>
+    <React.Fragment>
+      <Head title="Customers"></Head>
       <div className="w-100 h-32 bg-primary">
         <div className="flex flex-row justify-between p-5">
           <AiOutlineArrowLeft
@@ -27,10 +29,10 @@ const CustomerList = () => {
       </div>
       <div className="px-5">
         {customerData.map((customer) => (
-          <CustomerCard name={customer.name} order={customer.orderNum} />
+          <CustomerCard name={customer.name} order={customer.orderNum} key={customer.index} />
         ))}
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import { orderList } from "../../utils/Data";
+import IceCream from "../../assets/images/icecream.jpg";
 
 const settings = {
   dots: false,
@@ -50,11 +51,11 @@ const TransList = () => {
           <h3>Rejects (2)</h3>
         </div>
       </Slider>
-      <div className="flex flex-col divide-y">
+      <div className="flex flex-col divide-y lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6">
         {orderList.map((item) => (
-          <div className="flex flex-row justify-between py-5">
+          <div className="flex flex-row justify-between py-5 lg:max-w-lg" key={item.id}>
             <div className="flex">
-              <img className="w-14 h-14 mr-4"></img>
+              <img className="w-14 h-14 mr-4" src={IceCream} alt="product"></img>
               <div className="flex flex-col">
                 <p>Order #{item.id}</p>
                 <span className="text-light">{item.timeStamp}</span>
@@ -64,7 +65,9 @@ const TransList = () => {
               <p className="text-primary font-medium">${item.price}</p>
               <div className="flex flex row items-center">
                 {" "}
-                <div className="bg-success h-4 w-4 mx-1 rounded-full"></div>
+                <div
+                  className={`bg-${item.orderStatus === "Accepted" ? "success" : "warning"} h-4 w-4 mx-1 rounded-full`}
+                ></div>
                 {item.orderStatus}
               </div>
             </div>

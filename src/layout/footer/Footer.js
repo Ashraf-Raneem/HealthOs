@@ -3,7 +3,7 @@ import { BiHomeAlt } from "react-icons/bi";
 import { RiMoneyDollarBoxLine } from "react-icons/ri";
 import { MdOutlineWindow } from "react-icons/md";
 import { FiLayers } from "react-icons/fi";
-import { BsPerson } from "react-icons/bs";
+import { RiLogoutBoxLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
@@ -57,7 +57,7 @@ const Footer = () => {
           window.location.reload();
         }}
       >
-        <BsPerson size="1.5rem" color={window.location.pathname === "Account" ? "#0170ba" : ""} />
+        <RiLogoutBoxLine size="1.5rem" color={window.location.pathname === "Account" ? "#0170ba" : ""} />
         <p className={`${window.location.pathname === "Account" ? "font-bold text-primary" : "font-medium"}`}>Logout</p>
       </div>
     </div>
