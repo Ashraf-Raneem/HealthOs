@@ -2,13 +2,20 @@ import React from "react";
 import { AiOutlineInfoCircle, AiOutlineArrowLeft } from "react-icons/ai";
 import { IoIosArrowForward } from "react-icons/io";
 import TransList from "../../components/transaction-list/TransactionList";
+import { useNavigate } from "react-router-dom";
 
 const Payment = () => {
+  const navigate = useNavigate();
   return (
     <div className="w-100">
       <div className="h-18 bg-primary">
         <div className="flex flex-row justify-between p-5">
-          <AiOutlineArrowLeft size="1.5rem" color="#ffffff" />
+          <AiOutlineArrowLeft
+            size="1.5rem"
+            color="#ffffff"
+            className="cursor-pointer"
+            onClick={() => navigate("/home")}
+          />
           <p className="text-white text-lg font-bold flex text-left">Payment</p>
           <AiOutlineInfoCircle size="1.5rem" color="#ffffff" />
         </div>

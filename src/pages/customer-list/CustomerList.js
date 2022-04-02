@@ -2,13 +2,20 @@ import React from "react";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import CustomerCard from "../../components/customer-cards/CustomerCard";
 import { customerData } from "../../utils/Data";
+import { useNavigate } from "react-router-dom";
 
 const CustomerList = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="w-100 h-32 bg-primary">
         <div className="flex flex-row justify-between p-5">
-          <AiOutlineArrowLeft size="1.5rem" color="#ffffff" />
+          <AiOutlineArrowLeft
+            size="1.5rem"
+            color="#ffffff"
+            className="cursor-pointer"
+            onClick={() => navigate("/home")}
+          />
           <p className="text-white text-lg font-bold flex text-left">My Customers</p>
           <div></div>
         </div>

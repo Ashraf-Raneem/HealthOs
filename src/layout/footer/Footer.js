@@ -1,48 +1,64 @@
-import React, { useState } from "react";
+import React from "react";
 import { BiHomeAlt } from "react-icons/bi";
 import { RiMoneyDollarBoxLine } from "react-icons/ri";
 import { MdOutlineWindow } from "react-icons/md";
 import { FiLayers } from "react-icons/fi";
 import { BsPerson } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
-  const [page, setPage] = useState("Home");
+  const navigate = useNavigate();
   return (
     <div className="flex flex-row justify-evenly bg-white border-t-2 border-secondary fixed bottom-0 left-0 right-0 p-3">
       <div
         className="flex flex-col justify-center items-center text-gray-500 cursor-pointer"
-        onClick={() => setPage("Home")}
+        onClick={() => {
+          navigate("/home");
+        }}
       >
-        <BiHomeAlt size="1.5rem" color={page === "Home" ? "#0170ba" : ""} />
-        <p className={`${page === "Home" ? "font-bold text-primary" : "font-medium"}`}>Home</p>
+        <BiHomeAlt size="1.5rem" color={window.location.pathname === "/home" ? "#0170ba" : ""} />
+        <p className={`${window.location.pathname === "/home" ? "font-bold text-primary" : "font-medium"}`}>Home</p>
       </div>
       <div
         className="flex flex-col justify-center items-center text-gray-500 cursor-pointer"
-        onClick={() => setPage("Orders")}
+        onClick={() => {
+          navigate("/orders");
+        }}
       >
-        <RiMoneyDollarBoxLine size="1.5rem" color={page === "Orders" ? "#0170ba" : ""} />
-        <p className={`${page === "Orders" ? "font-bold text-primary" : "font-medium"}`}>Orders</p>
+        <RiMoneyDollarBoxLine size="1.5rem" color={window.location.pathname === "/orders" ? "#0170ba" : ""} />
+        <p className={`${window.location.pathname === "/orders" ? "font-bold text-primary" : "font-medium"}`}>Orders</p>
       </div>
       <div
         className="flex flex-col justify-center items-center text-gray-500 cursor-pointer"
-        onClick={() => setPage("Products")}
+        onClick={() => {
+          navigate("/payment");
+        }}
       >
-        <MdOutlineWindow size="1.5rem" color={page === "Products" ? "#0170ba" : ""} />
-        <p className={`${page === "Products" ? "font-bold text-primary" : "font-medium"}`}>Products</p>
+        <MdOutlineWindow size="1.5rem" color={window.location.pathname === "/payment" ? "#0170ba" : ""} />
+        <p className={`${window.location.pathname === "/payment" ? "font-bold text-primary" : "font-medium"}`}>
+          Payments
+        </p>
       </div>
       <div
         className="flex flex-col justify-center items-center text-gray-500 cursor-pointer"
-        onClick={() => setPage("Manage")}
+        onClick={() => {
+          navigate("/customers");
+        }}
       >
-        <FiLayers size="1.5rem" color={page === "Manage" ? "#0170ba" : ""} />
-        <p className={`${page === "Manage" ? "font-bold text-primary" : "font-medium"}`}>Manage</p>
+        <FiLayers size="1.5rem" color={window.location.pathname === "/customers" ? "#0170ba" : ""} />
+        <p className={`${window.location.pathname === "/customers" ? "font-bold text-primary" : "font-medium"}`}>
+          Manage
+        </p>
       </div>
       <div
         className="flex flex-col justify-center items-center text-gray-500 cursor-pointer"
-        onClick={() => setPage("Account")}
+        onClick={() => {
+          localStorage.removeItem("accessToken");
+          window.location.reload();
+        }}
       >
-        <BsPerson size="1.5rem" color={page === "Account" ? "#0170ba" : ""} />
-        <p className={`${page === "Account" ? "font-bold text-primary" : "font-medium"}`}>Account</p>
+        <BsPerson size="1.5rem" color={window.location.pathname === "Account" ? "#0170ba" : ""} />
+        <p className={`${window.location.pathname === "Account" ? "font-bold text-primary" : "font-medium"}`}>Logout</p>
       </div>
     </div>
   );
