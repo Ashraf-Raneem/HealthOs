@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import Head from "../../layout/head/Head";
 
 const Login = () => {
@@ -15,6 +16,8 @@ const Login = () => {
     if (phone === "1732710968" && password === "12345") {
       localStorage.setItem("accessToken", "accessToken");
       window.location.reload();
+    } else {
+      toast.error("Incorrect password or mobile number");
     }
   };
 
